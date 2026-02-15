@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Link Organizer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<header>
+    <div class="search-wrapper">
+        <img src="../assets/icons/search.svg">
+        <input type="text" id="searchInput" placeholder="Search links..." title="Search the content of the links and also the comments">
+    </div>
+
+    <div class="header-actions">
+        <img src="../assets/icons/export.svg" id="exportBtn" class="icon-btn" title="Export all list and links to a backup file">
+        <img src="../assets/icons/import.svg" id="importBtn" class="icon-btn" title="Import your links backup file">
+        <img src="../assets/icons/theme.svg" id="themeToggle" class="icon-btn" title="Theme">
+    </div>
+</header>
+
+<main id="listsContainer"></main>
+
+<footer>
+    <button id="addCurrent">Add Current Tab</button>
+    <button id="deleteAll">Delete All</button>
+    <button id="createList">Create List</button>
+	<button id="addNewURL">Add URL</button>	
+</footer>
+	<div> Press CTRL + Q to open </div>
+	
+<!-- MODAL to NEWURL -->
+<div id="modalOverlay" class="hidden">
+    <div class="modal">
+        <h3 id="modalTitle"></h3>
+        <div id="modalContent"></div>
+        <div class="modal-actions">
+            <button id="modalCancel">Cancel</button>
+            <button id="modalConfirm">Confirm</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add URL Modal -->
+<div id="addUrlModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Add New URL</h2>
+
+    <label>Title</label>
+    <input type="text" id="manualTitle" placeholder="Enter title">
+
+    <label>URL</label>
+    <input type="text" id="manualUrl" placeholder="https://example.com">
+
+    <label>Description</label>
+    <textarea id="manualDescription" placeholder="Optional description"></textarea>
+
+    <label>Select List</label>
+    <select id="manualListSelect"></select>
+
+    <div class="modal-buttons">
+      <button id="saveManualUrl">Save</button>
+      <button id="cancelManualUrl">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="storage.js"></script>
+<script src="dragdrop.js"></script>
+<script src="ui.js"></script>
+<script src="popup.js"></script>
+
+
+</body>
+</html>
